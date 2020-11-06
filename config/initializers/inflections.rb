@@ -14,3 +14,9 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.irregular 'genero', 'generos'
+  inflect.irregular 'cargo', 'cargos'
+  inflect.irregular 'institucion', 'instituciones'
+end
