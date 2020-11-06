@@ -1,2 +1,0 @@
-class Respuestum < ApplicationRecord
-end
