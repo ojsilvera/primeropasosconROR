@@ -57,3 +57,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Manejo de formularios, mas informacion en: https://github.com/heartcombo/simple_form
+gem 'simple_form'
