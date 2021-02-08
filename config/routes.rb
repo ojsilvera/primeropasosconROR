@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tasks
+  resources :categories
   resources :institucions
   # get '/hola', to: 'welcome#hello'
   # root 'welcome#hello'
