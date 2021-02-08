@@ -7,13 +7,13 @@ default: &default
 
 development:
   <<: *default
-  database: curso_development
+  database: task_development
   port: 5432
   host: localhost
 
 test:
   <<: *default
-  database: curso_test
+  database: tak_test
   port: 5432
   host: localhost
 
