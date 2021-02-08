@@ -38,6 +38,9 @@ group :development do
   gem 'listen', '~> 3.2'
   # gemas para mejores practicas
   gem 'better_errors', '~> 2.9', '>= 2.9.1'
+  # proprocesador para html
+  gem 'haml-rails', '~> 2.0', '>= 2.0.1'
+  # gemas para mejores practicas
   gem 'rubocop', require: false
   gem 'rufo', '~> 0.12.0'
   gem 'solargraph', '~> 0.39.17'
@@ -64,3 +67,6 @@ gem 'simple_form'
 # Annotates Rails/ActiveRecord Models, routes, fixtures, and others based on the database schema.
 # ref: https://rubygems.org/gems/annotate
 gem 'annotate', '~> 3.1', '>= 3.1.1'
+# Haml (HTML Abstraction Markup Language)
+# https://rubygems.org/gems/haml
+gem 'haml', '~> 5.2', '>= 5.2.1'
