@@ -32,6 +32,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'ruby_jard', '~> 0.3.1'
 end
 
 group :development do
@@ -44,7 +45,8 @@ group :development do
   gem 'rubocop', require: false
   gem 'rufo', '~> 0.12.0'
   gem 'solargraph', '~> 0.39.17'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  # Spring speeds up development by keeping your application running in the background.
+  # Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
@@ -62,7 +64,8 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# Manejo de formularios, mas informacion en: https://github.com/heartcombo/simple_form
+# Manejo de formularios,
+# mas informacion en: https://github.com/heartcombo/simple_form
 gem 'simple_form'
 # Annotates Rails/ActiveRecord Models, routes, fixtures, and others based on the database schema.
 # ref: https://rubygems.org/gems/annotate
@@ -70,3 +73,8 @@ gem 'annotate', '~> 3.1', '>= 3.1.1'
 # Haml (HTML Abstraction Markup Language)
 # https://rubygems.org/gems/haml
 gem 'haml', '~> 5.2', '>= 5.2.1'
+
+# A set of common locale data and translations to internationalize and/or localize your Rails applications.
+# https://rubygems.org/gems/rails-i18n
+
+gem 'rails-i18n', '~> 6.0'

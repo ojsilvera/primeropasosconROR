@@ -1,9 +1,9 @@
 ---
-en:
+es:
   activerecord:
     models:
       category:
-        one: Categoria
+        one: Categoría
         other: Categorías
       tasks:
         one: Tarea
@@ -11,7 +11,7 @@ en:
   categories:
     edit_category: Editar Categoría
     form:
-      name: Name
+      name: Nombre
     new_category: Neva Categoría
   common:
     back: Atrás
