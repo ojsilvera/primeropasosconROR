@@ -12,6 +12,7 @@
 #
 class Task < ApplicationRecord
   belongs_to :category
+  belongs_to :owner, class_name:'User'
 
   validates :name, :description, :due_date, presence: true
 
@@ -23,6 +24,7 @@ class Task < ApplicationRecord
   def due_date_validate
     return if due_date.blank?
     return if due_date > Date.today
+
     errors.add :due_date, I18n.t('task.errors.invalid_due_date')
   end
 
