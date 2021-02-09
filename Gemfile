@@ -36,6 +36,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'ruby_jard', '~> 0.3.1'
+  gem 'binding_of_caller', '~> 1.0'
 end
 
 group :development do
@@ -81,3 +82,5 @@ gem 'haml', '~> 5.2', '>= 5.2.1'
 # https://rubygems.org/gems/rails-i18n
 
 gem 'rails-i18n', '~> 6.0'
+
+
