@@ -13,7 +13,7 @@
 class Task < ApplicationRecord
   belongs_to :category
   belongs_to :owner, class_name: 'User'
-  has_many :participating_users, class_name('Participant')
+  has_many :participating_users, class_name: 'Participant'
   has_many :participants, through: :participating_users, source: :user
 
   validates :name, :description, :due_date, presence: true
@@ -23,6 +23,8 @@ class Task < ApplicationRecord
   validates :name, uniqueness: { case_insensitive: false }
 
   validate :due_date_validate
+
+  accepts_nested_attributes_for :participating_users, allow_destroy: true
 
   def due_date_validate
     return if due_date.blank?

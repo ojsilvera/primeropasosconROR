@@ -71,16 +71,19 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Manejo de formularios,
 # mas informacion en: https://github.com/heartcombo/simple_form
 gem 'simple_form'
+
 # Annotates Rails/ActiveRecord Models, routes, fixtures, and others based on the database schema.
 # ref: https://rubygems.org/gems/annotate
 gem 'annotate', '~> 3.1', '>= 3.1.1'
+
 # Haml (HTML Abstraction Markup Language)
 # https://rubygems.org/gems/haml
 gem 'haml', '~> 5.2', '>= 5.2.1'
 
 # A set of common locale data and translations to internationalize and/or localize your Rails applications.
 # https://rubygems.org/gems/rails-i18n
-
 gem 'rails-i18n', '~> 6.0'
 
-
+# Nested forms are forms that handle nested models and attributes in one form
+# https://github.com/nathanvda/cocoon
+gem 'cocoon'

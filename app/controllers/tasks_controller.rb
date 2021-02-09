@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: %i[ show edit update destroy ]
+  before_action :set_task, only: %i[show edit update destroy]
 
   # GET /tasks or /tasks.json
   def index
@@ -65,6 +65,13 @@ class TasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_params
-      params.require(:task).permit(:name, :description, :due_date, :category_id)
+      params.require(:task).permit(:name,
+                                   :description,
+                                   :due_date,
+                                   :category_id,
+                                   participating_users_attributes: %i[user_id
+                                                                     role
+                                                                     id
+                                                                     _destroy])
     end
 end
