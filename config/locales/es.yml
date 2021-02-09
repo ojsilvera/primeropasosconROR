@@ -18,3 +18,6 @@ es:
     edit: Editar
     show: Mostrar
   hello: Hello world
+  task:
+    errors:
+      invalid_due_date: Fecha de terminación debe estar en el futuro
