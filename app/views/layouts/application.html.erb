@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <%= yield %>
     <%= link_to 'cerrare sesion', destroy_user_session_path, method: :delete %>
+    <%= yield %>
   </body>
 </html>

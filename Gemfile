@@ -34,9 +34,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'binding_of_caller', '~> 1.0'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'ruby_jard', '~> 0.3.1'
-  gem 'binding_of_caller', '~> 1.0'
 end
 
 group :development do
@@ -87,3 +87,7 @@ gem 'rails-i18n', '~> 6.0'
 # Nested forms are forms that handle nested models and attributes in one form
 # https://github.com/nathanvda/cocoon
 gem 'cocoon'
+
+# Continuation of the simple authorization solution for Rails which is decoupled from user roles.
+# https://rubygems.org/gems/cancancan
+gem 'cancancan', '~> 1.15'
