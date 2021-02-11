@@ -12,19 +12,22 @@
 #  owner_id    :bigint           not null
 #
 class Task < ApplicationRecord
+  # * Relaciones
   belongs_to :category
   belongs_to :owner, class_name: 'User'
   has_many :participating_users, class_name: 'Participant'
   has_many :participants, through: :participating_users, source: :user
 
+  # * Validaciones
   validates :name, :description, :due_date, presence: true
   validates :participating_users, presence: true
-
-  # valida que distinga mayusculas de minusculas
   validates :name, uniqueness: { case_insensitive: false }
-
   validate :due_date_validate
 
+  # * Generar codigo para la tarea
+  before_create :create_code
+
+  # * Permitir insercion de campos de un modelo en el formulario de otro a traves de la gema cocoon
   accepts_nested_attributes_for :participating_users, allow_destroy: true
 
   def due_date_validate
@@ -34,4 +37,7 @@ class Task < ApplicationRecord
     errors.add :due_date, I18n.t('task.errors.invalid_due_date')
   end
 
+  def create_code
+    self.code = "#{owner_id}#{Time.now.to_i.to_s(36)}#{SecureRandom.hex(8)}"
+  end
 end
