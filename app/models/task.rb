@@ -15,7 +15,7 @@ class Task < ApplicationRecord
   # * Relaciones
   belongs_to :category
   belongs_to :owner, class_name: 'User'
-  has_many :participating_users, class_name: 'Participant'
+  has_many :participating_users, class_name: 'Participant', dependent: :delete_all
   has_many :participants, through: :participating_users, source: :user
 
   # * Validaciones
@@ -26,6 +26,9 @@ class Task < ApplicationRecord
 
   # * Generar codigo para la tarea
   before_create :create_code
+
+  # * enviar email, una vez creada la tarea
+  after_create :send_mail
 
   # * Permitir insercion de campos de un modelo en el formulario de otro a traves de la gema cocoon
   accepts_nested_attributes_for :participating_users, allow_destroy: true
@@ -39,5 +42,11 @@ class Task < ApplicationRecord
 
   def create_code
     self.code = "#{owner_id}#{Time.now.to_i.to_s(36)}#{SecureRandom.hex(8)}"
+  end
+
+  def send_mail
+    (participants + [owner]).each do |user|
+      ParticipantMailer.with(user: user, task: self).new_task_email.deliver!
+    end
   end
 end

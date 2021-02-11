@@ -7,9 +7,9 @@ class Ability
 
     # * si el usuario es follower del post puede verlo, editarlo y borrarlo
     can :read, Task do |t|
-      task = t.participating_user_ids
+      participants = t.participant_ids
       user = user.id
-      task.map { |id_participant| user == id_participant }
+      participants.map { |id_participant| user == id_participant }
     end
   end
 end

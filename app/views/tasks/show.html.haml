@@ -11,7 +11,9 @@
   = @task.due_date
 %p
   %b Category:
-  = @task.category
+  = @task.category.name
+
+/ ToDo:  pendiente listar los participantes de la tarea
 
 = link_to 'Edit', edit_task_path(@task)
 \|
