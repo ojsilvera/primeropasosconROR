@@ -10,6 +10,7 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  owner_id    :bigint           not null
+#  code        :string
 #
 class Task < ApplicationRecord
   # * Relaciones
@@ -17,6 +18,7 @@ class Task < ApplicationRecord
   belongs_to :owner, class_name: 'User'
   has_many :participating_users, class_name: 'Participant', dependent: :delete_all
   has_many :participants, through: :participating_users, source: :user
+  has_many :notes
 
   # * Validaciones
   validates :name, :description, :due_date, presence: true
