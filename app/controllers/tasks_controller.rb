@@ -73,8 +73,8 @@ class TasksController < ApplicationController
                                    :due_date,
                                    :category_id,
                                    participating_users_attributes: %i[user_id
-                                                                     role_id
-                                                                     id
-                                                                     _destroy])
+                                                                      role_id
+                                                                      id
+                                                                     destroy])
     end
 end
