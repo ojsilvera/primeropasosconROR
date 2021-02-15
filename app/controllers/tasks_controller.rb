@@ -75,6 +75,6 @@ class TasksController < ApplicationController
                                    participating_users_attributes: %i[user_id
                                                                       role_id
                                                                       id
-                                                                     destroy])
+                                                                      destroy])
     end
 end
